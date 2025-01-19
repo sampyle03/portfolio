@@ -1,0 +1,29 @@
+.compass {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border: 1px solid black;
+    margin: 40px auto;
+    display: none;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    /* hide this element */
+    display: none;
+}
+
+.questions {
+    margin: 20px 30px;
+}

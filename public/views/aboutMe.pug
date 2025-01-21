@@ -3,16 +3,16 @@ link(rel="stylesheet", href="../css/aboutMe.css")
 
 body
     #nav-bar 
-        h3.nav-bar-left Home 
-        h3.nav-bar-right About Me 
-        h3.nav-bar-right Projects
-        h3.nav-bar-right Contact
+        h3.nav-bar-left#nbl-home Home 
+        h3.nav-bar-right#nbr-about-me About Me 
+        h3.nav-bar-right#nbr-projects Projects
+        h3.nav-bar-right#nbr-contact Contact
     
     #about-me
         section#top-section
             #ts-grid
                 #tsg-left-section
-                    h2 about me 
+                    h2 ABOUT ME 
                     p Born in Basildon, I found my interest in programming in a Scratch club at the age of 9.
                     p I continued to make games on Scratch on a regular basis until I was introduced to Python at the age of 12.
                     p Between moving secondary schools in year 8 and now, I have gained experience in: 
@@ -24,7 +24,6 @@ body
                         img(src="../images/cpp.png")
                         img(src="../images/c.png")
                         img(src="../images/sql.png")
-                    h5 At the University of East Anglia, I have applied my knowledge to practical projects such as: 
                 img(src="../images/sam.jpg")#me-pic
         #projects.regular-section
             h2 Projects
@@ -55,6 +54,6 @@ body
 #empty-space
     meta(charset="utf-8")
 
-script(src="../controllers/indexController.js")
+script(src="../controllers/aboutMeController.js")
 script(src="../controllers/general.js")
 

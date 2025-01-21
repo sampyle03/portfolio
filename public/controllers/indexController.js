@@ -32,7 +32,7 @@ function windowResized() {
         nav.style.width = "34%";
         canvas.style.position = "absolute";
 
-        lowerNavOptions(false);
+        // lowerNavOptions(false);
 
     } else {
         resizeCanvas(window.innerWidth, window.innerHeight);
@@ -49,7 +49,7 @@ function windowResized() {
         canvas.style.position = "relative";
         canvas.style.top = "0";
 
-        lowerNavOptions(true);
+        // lowerNavOptions(true);
 
     }
 
@@ -58,6 +58,11 @@ function windowResized() {
 
 document.getElementById("nav-option-1").addEventListener("click", function() {
     window.location.href = "/about-me";
+}
+);
+
+document.getElementById("nav-option-2").addEventListener("click", function() {
+    window.open("https://github.com/sampyle03", '_blank').focus();
 }
 );
 

@@ -56,7 +56,7 @@ html, body {
 
 
 #nav p{
-    width: 80%;
+    width: 83.5%;
     margin: 0px 2px 30px 2px;
     float:right;
     text-align: right;
@@ -91,7 +91,7 @@ html, body {
     color: black;
     font-weight: 450;
     border-radius: 3.54px;
-    width: 120px; 
+    width: 110px; 
 }
 
 #nav-options h3:hover {
@@ -178,23 +178,24 @@ html, body {
 
 @media screen and (max-width: 700px) {
     html, body {
-        overflow-y: scroll;
+        overflow-y: visible;
         min-height: 100vh;
         position: relative;
-        padding-bottom: 200px !important;
     }
 
     #nav {
         overflow: visible;
+        height: inherit;
     }
 
     #nav-options {
         grid-template-columns: 1fr;
         overflow: visible;
+        display: block;
     }
 
-    #empty-space {
+    /* #empty-space {
         display: block;
         height: 200px;
-    }
+    } */
 }

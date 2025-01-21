@@ -26,6 +26,10 @@ html, body {
     float: left;
 }
 
+#nbl-home {
+    margin-left: 20px !important;
+}
+
 .nav-bar-right {
     float: right;
 }
@@ -57,6 +61,11 @@ html, body {
 #tsg-left-section {
     width: 97%;
     margin: 0 auto;
+}
+
+#tsg-left-section h2 {
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    font-size: 100px;
 }
 
 #me-pic {

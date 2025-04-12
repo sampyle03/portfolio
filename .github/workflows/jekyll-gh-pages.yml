@@ -25,4 +25,7 @@ jobs:
         run: npm install express express-session
 
       - name: Start Node.js server
-        run: node server.js
+        run: |
+             nohup node server.js &
+             sleep 5
+

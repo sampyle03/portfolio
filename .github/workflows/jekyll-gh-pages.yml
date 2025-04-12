@@ -21,5 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install express
+        run: npm install express
+
       - name: Start Node.js server
         run: node server.js

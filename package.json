@@ -1,0 +1,22 @@
+{
+    "name": "portfolio-website",
+    "version": "1.0.0",
+    "description": "A portfolio website to showcase projects and skills.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "build": "webpack --mode production",
+        "dev": "webpack serve --mode development",
+        "test": "echo \"No test specified\" && exit 1"
+    },
+    "keywords": [
+        "portfolio",
+        "website",
+        "projects",
+        "skills"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {}
+}

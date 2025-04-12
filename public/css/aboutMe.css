@@ -1,0 +1,114 @@
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+    background-color: rgb(51, 54, 71);
+}
+
+#nav-bar {
+    display: block;
+    width: 100%;
+    background-color: rgb(9, 14, 47);
+    color: white;
+    height: 100px;
+}
+
+#nav-bar h3{
+    display: inline-block;
+    text-shadow: 1px 1px 2px rgb(77, 77, 77);
+    padding: 2px;
+    margin-top: 28px;
+    margin-left: 10px;
+    margin-right: 30px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+#nav-bar h3:hover {
+    color: black;
+    background-color: white;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    text-shadow: 0px 0px 0px rgb(77, 77, 77);
+    border-radius: 9px;
+}
+
+.nav-bar-left {
+    float: left;
+}
+
+#nbl-home {
+    margin-left: 20px !important;
+}
+
+.nav-bar-right {
+    float: right;
+}
+
+#about-me {
+    display: block;;
+    margin: 0 auto;
+    width: 80%;
+    color: white;
+}
+
+#about-me #top-section {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#ts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    width: 100%;
+}
+
+#tsg-left-section {
+    width: 97%;
+    margin: 0 auto;
+}
+
+#tsg-left-section h2 {
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    font-size: 100px;
+}
+
+#me-pic {
+    height: 340px;
+    width: auto;
+    margin: auto;
+    margin-top: 90px;
+}
+
+.regular-section {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.large-section {
+    font-size: 40px;
+    font-family: "roboto", "Roboto Placeholder", sans-serif;
+    font-weight: 700;
+}
+
+#programming-languages img{
+    height: 80px;
+    width: auto;
+}
+
+#text-scratch {
+    color: orange
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.73s ease-out;
+}
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}

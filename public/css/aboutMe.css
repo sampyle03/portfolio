@@ -5,6 +5,48 @@ html, body {
     background-color: rgb(51, 54, 71);
 }
 
+.loading-icon {
+    will-change: width, height;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 200px;
+    width: 30px;
+    height: 30px;
+    opacity: 60%;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading-icon span {
+    opacity: 0%;
+}
+
+@keyframes loading1 {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(0.48);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+}
+  
+@keyframes loading2 {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(0.48);
+    }
+}
+
+#body-main {
+    display: none;
+}
+
+
 #nav-bar {
     display: block;
     width: 100%;
@@ -22,6 +64,7 @@ html, body {
     margin-right: 30px;
     cursor: pointer;
     font-size: 30px;
+    user-select: none;
 }
 
 #nav-bar h3:hover {
@@ -94,6 +137,10 @@ html, body {
     font-weight: 700;
 }
 
+#get-to-know-me {
+    padding-bottom: 55px;
+}
+
 #programming-languages img{
     height: 80px;
     width: auto;
@@ -111,4 +158,30 @@ html, body {
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+#bottom-gradient {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* adjust height as needed */
+    pointer-events: none; /* allow clicks to go through */
+    background: linear-gradient(to top, rgba(11, 7, 35, 0.8), rgba(255, 255, 255, 0));
+    transition: opacity 0.3s ease;
+    opacity: 1;
+    z-index: 9999;
+}
+
+#bottom-gradient.hidden {
+    opacity: 0;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }

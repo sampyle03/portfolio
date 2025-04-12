@@ -25,80 +25,20 @@ html, body {
 }
 
 @keyframes loading1 {
-    0% {
-        width: 0px;
-        height: 0px;
-    }
-    10% {
-        width: 5px;
-        height: 5px;
-    }
-    25% {
-        width: 40px;
-        height: 40px;
-    }
-    40% {
-        width: 75px;
-        height: 75px;
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(0.48);
     }
     50% {
-        width: 80px;
-        height: 80px;
-    }
-    60% {
-        width: 75px;
-        height: 75px;
-    }
-    75% {
-        width: 40px;
-        height: 40px;
-    }
-    90% {
-        width: 5px;
-        height: 5px;
-    }
-    100% {
-        width: 0px;
-        height: 0px;
+      transform: translate(-50%, -50%) scale(1);
     }
 }
-
+  
 @keyframes loading2 {
-    0% {
-        width: 80px;
-        height: 80px;
-    }
-    10% {
-        width: 75px;
-        height: 75px;
-    }
-    25% {
-        width: 40px;
-        height: 40px;
-    }
-    40% {
-        width: 5px;
-        height: 5px;
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
     }
     50% {
-        width: 0px;
-        height: 0px;
-    }
-    60% {
-        width: 5px;
-        height: 5px;
-    }
-    75% {
-        width: 40px;
-        height: 40px;
-    }
-    90% {
-        width: 75px;
-        height: 75px;
-    }
-    100% {
-        width: 80px;
-        height: 80px;
+      transform: translate(-50%, -50%) scale(0.48);
     }
 }
 
@@ -188,7 +128,8 @@ html, body {
     color: black;
     font-weight: 450;
     border-radius: 3.54px;
-    width: 110px; 
+    width: 110px;
+    user-select: none;
 }
 
 #nav-options h3:hover {

@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Install express
-        run: npm install express
+        run: npm install express express-session
 
       - name: Start Node.js server
         run: node server.js

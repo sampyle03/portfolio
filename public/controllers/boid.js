@@ -141,7 +141,7 @@ class Boid {
             document.getElementById("boid-cursor-note").classList.remove("show");
             setTimeout(function () {
                 document.getElementById("boid-cursor-note").classList.add("hide");
-            }, 4000);
+            }, 1000);
         }
     }
 

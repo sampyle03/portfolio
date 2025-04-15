@@ -1,34 +1,35 @@
 {
-  "name": "portfolio-website",
-  "version": "1.0.0",
-  "description": "1. Run \"npm install\" in the terminal\r 2. Run \"node server.js\" in the terminal",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sampyle03/portfolio.git"
-  },
-  "keywords": [
-    "portfolio"
-  ],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sampyle03/portfolio/issues"
-  },
-  "homepage": "https://github.com/sampyle03/portfolio#readme",
-  "engines": {
-    "node": "22.x",
-    "npm": "10.x"
-  },
-  "dependencies": {
-    "express": "^5.1.0",
-    "express-session": "^1.18.1",
-    "fs": "^0.0.1-security",
-    "node": "^22.14.0",
-    "path": "^0.12.7"
+    "name": "portfolio-website",
+    "version": "1.0.0",
+    "description": "1. Run \"npm install\" in the terminal\r 2. Run \"node server.js\" in the terminal",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/sampyle03/portfolio.git"
+    },
+    "keywords": [
+      "portfolio"
+    ],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/sampyle03/portfolio/issues"
+    },
+    "homepage": "https://github.com/sampyle03/portfolio#readme",
+    "engines": {
+      "node": "22.x",
+      "npm": "10.x"
+    },
+    "dependencies": {
+      "express": "^5.1.0",
+      "express-session": "^1.18.1",
+      "fs": "^0.0.1-security",
+      "node": "^22.14.0",
+      "path": "^0.12.7"
+    }
   }
-}
+  

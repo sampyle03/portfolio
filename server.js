@@ -16,9 +16,9 @@ app.use(session({
 }));
 session.logged = false;
 
-const indexRoute = require('../public/routes/indexRoutes');
-const compassRoute = require('../public/routes/compassRoutes');
-const aboutMeRoute = require('../public/routes/aboutMeRoutes');
+const indexRoute = require('./public/routes/indexRoutes');
+const compassRoute = require('./public/routes/compassRoutes');
+const aboutMeRoute = require('./public/routes/aboutMeRoutes');
 
 app.use('/', indexRoute);
 app.use('/', compassRoute);

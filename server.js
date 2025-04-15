@@ -34,7 +34,9 @@ app.use((req, res, next) => {
 	res.setHeader(
 	  'Content-Security-Policy',
 	  "default-src 'none'; " +
-	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; " +
+	  // Allow scripts from cdnjs.cloudflare + dynamic loading
+	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval' 'strict-dynamic'; " +
+	  // Allow Ant Design CSS
 	  "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
 	  "img-src 'self' data:; " +
 	  "connect-src 'self'; " +

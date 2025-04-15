@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const boidSketch = document.getElementById("boid-sketch");
 
+    /*
     var script1 = document.createElement('script');
     script1.type = 'text/javascript';
     script1.async = true;
@@ -29,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
     script3.async = true;
     script3.src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"
     boidSketch.appendChild(script3)
+
+    */
 
     var script4 = document.createElement('script');
     script4.type = 'text/javascript';

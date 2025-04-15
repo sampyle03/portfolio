@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const { csp } = require('express-csp-header');
 const path = require('path');
 const fs = require('fs');
 const { stringify } = require('querystring');
@@ -28,8 +29,6 @@ const PORT = process.env.PORT || 8080;  // Default to 8080 locally, but use Hero
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
-
-const csp = require('express-csp-header');
 
 app.use(csp({
   policies: {

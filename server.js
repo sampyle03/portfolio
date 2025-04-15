@@ -1,6 +1,6 @@
 const express = require('express');
 const session = require('express-session');
-const { csp } = require('express-csp-header');
+const csp = require('express-csp-header');
 const path = require('path');
 const fs = require('fs');
 const { stringify } = require('querystring');
@@ -30,16 +30,16 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-app.use(csp({
-  policies: {
-    'default-src': [csp.NONE],
-    'script-src': [ 
-      csp.SELF, 
-      'https://cdnjs.cloudflare.com', // Allow scripts from this domain
-      csp.INLINE, 
-      csp.EVAL // If p5.js uses eval()
-    ],
-    'style-src': [csp.SELF, 'https://cdn.jsdelivr.net'],
-    'img-src': [csp.SELF, 'data:'],
-  }
-}));
+app.use(csp.csp({
+	policies: {
+	  'default-src': [csp.constants.NONE],
+	  'script-src': [
+		csp.constants.SELF,
+		'https://cdnjs.cloudflare.com',
+		csp.constants.INLINE,
+		'unsafe-eval'
+	  ],
+	  'style-src': [csp.constants.SELF, 'https://cdn.jsdelivr.net'],
+	  'img-src': [csp.constants.SELF, 'data:']
+	}
+  }));

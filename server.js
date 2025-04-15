@@ -28,3 +28,19 @@ const PORT = process.env.PORT || 8080;  // Default to 8080 locally, but use Hero
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+const csp = require('express-csp-header');
+
+app.use(csp({
+  policies: {
+    'default-src': [csp.NONE],
+    'script-src': [ 
+      csp.SELF, 
+      'https://cdnjs.cloudflare.com', // Allow scripts from this domain
+      csp.INLINE, 
+      csp.EVAL // If p5.js uses eval()
+    ],
+    'style-src': [csp.SELF, 'https://cdn.jsdelivr.net'],
+    'img-src': [csp.SELF, 'data:'],
+  }
+}));

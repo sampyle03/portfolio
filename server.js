@@ -10,8 +10,13 @@ app.use((req, res, next) => {
 	res.setHeader(
 		'Content-Security-Policy',
 		"default-src 'none'; " +
+		// JS
 		"script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; " +
+		"script-src-elem 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; " +
+		// CSS
 		"style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
+		"style-src-elem 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
+		// Images
 		"img-src 'self' data:; " +
 		"font-src 'self'; " +
 		"connect-src 'self'; " +
@@ -19,6 +24,7 @@ app.use((req, res, next) => {
 	);
 	next();
 });
+
 
 app.use(express.json());
 app.use(express.static('public'));

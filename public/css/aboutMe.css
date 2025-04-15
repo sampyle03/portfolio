@@ -133,6 +133,8 @@ html {
 #intro p {
     width: 86%;
     justify-self: center;
+    margin: 0 auto;
+    display: block;
 }
 
 #ts-grid {
@@ -241,6 +243,7 @@ html {
     font-size: 45px;
     font-weight: 1000;
     font-family: "Secondary", "Poppins", sans-serif;
+    color: orange;
 }
 
 .stack-languages-container {
@@ -325,6 +328,8 @@ html {
     font-weight: 800;
     width: 91%;
     justify-self: center;
+    margin-top: 88px;
+    color: orange;
 }
 
 
@@ -347,10 +352,16 @@ html {
     align-items: center;
     border-radius: 10px 10px 0px 0px;
     border: black 3px solid;
+    cursor: pointer;
 }
 
-#top-project {
-    box-shadow: #9f7928 0px 0px 14px 0px;
+.project:hover{
+    transform: scale(1.03);
+    transition: all 0.32s ease-in-out;
+}
+
+.top-project {
+    box-shadow: #ffae00 0px 0px 14px 0px;
 }
 
 #my-github {
@@ -398,6 +409,8 @@ html {
 .project-text {
     padding-top: 8px;
     width: 90%;
+    font-family: "secondary", "Poppins", sans-serif;
+    font-weight: 100;
 }
 
 .project-i-b-container {
@@ -418,9 +431,6 @@ html {
     align-self: flex-end; /* optional since container aligns bottom */
 }
 
-.project-learn-more-button:hover {
-    cursor: pointer;
-}
 
 .project-learn-more-text {
     padding: 4px 10px;
@@ -459,9 +469,7 @@ html {
 
 
 
-#text-scratch {
-    color: orange
-}
+
 
 .hidden {
     opacity: 0;

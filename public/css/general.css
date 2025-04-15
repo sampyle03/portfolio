@@ -7,12 +7,8 @@ body {
 
 /*==================== NAVBAR ====================*/
 
-.logo {
-    width: 100px;
-    height: 100px;
-    margin: 3px 0px 0px 7px;
-    display: inline-block;
-    cursor: pointer;
+#page-logo {
+    display:none;
 }
 
 .logo:hover{

@@ -80,7 +80,7 @@ html, body {
     font-weight: 700;
     font-size: 67px;
     margin-bottom: 0.17em;
-    background-image: linear-gradient(rgb(176, 176, 176), rgb(230, 230, 230));
+    background-image: linear-gradient(rgb(255, 135, 40), rgb(248, 124, 88));
     color: transparent;
     background-clip: text;
 }

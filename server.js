@@ -24,6 +24,7 @@ app.use('/', indexRoute);
 app.use('/', compassRoute);
 app.use('/about-me', aboutMeRoute);
 
-app.listen(8080, () => {
-    console.log('Server listening on port http://localhost:8080/');    
+const PORT = process.env.PORT || 8080;  // Default to 8080 locally, but use Heroku's $PORT in production
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });

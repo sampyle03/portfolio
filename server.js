@@ -33,19 +33,11 @@ app.listen(PORT, () => {
 app.use((req, res, next) => {
 	res.setHeader(
 	  'Content-Security-Policy',
-	  "default-src 'none'; " +
-	  // Scripts
-	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; " +
-	  // Styles
-	  "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
-	  // Images
-	  "img-src 'self' data:; " +
-	  // Fonts
-	  "font-src 'self'; " +
-	  // Connections
-	  "connect-src 'self'; " +
-	  // Frame ancestors
-	  "frame-ancestors 'none';"
+	  "default-src * 'unsafe-inline' 'unsafe-eval'; " + 
+	  "script-src * 'unsafe-inline' 'unsafe-eval'; " +
+	  "style-src * 'unsafe-inline'; " +
+	  "img-src * data:; " +
+	  "font-src *;"
 	);
 	next();
   });

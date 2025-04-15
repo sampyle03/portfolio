@@ -34,14 +34,18 @@ app.use((req, res, next) => {
 	res.setHeader(
 	  'Content-Security-Policy',
 	  "default-src 'none'; " +
-	  // Allow scripts from cdnjs.cloudflare + dynamic loading
-	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval' 'strict-dynamic'; " +
-	  // Allow Ant Design CSS
+	  // Scripts
+	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; " +
+	  // Styles
 	  "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
+	  // Images
 	  "img-src 'self' data:; " +
-	  "connect-src 'self'; " +
+	  // Fonts
 	  "font-src 'self'; " +
-	  "form-action 'self';"
+	  // Connections
+	  "connect-src 'self'; " +
+	  // Frame ancestors
+	  "frame-ancestors 'none';"
 	);
 	next();
   });

@@ -137,6 +137,12 @@ class Boid {
                 this.acceleration.add(steer);
             }
         }
+        if (d < 24) {
+            document.getElementById("boid-cursor-note").classList.remove("show");
+            setTimeout(function () {
+                document.getElementById("boid-cursor-note").classList.add("hide");
+            }, 1000);
+        }
     }
 
     update() {

@@ -1,22 +1,3 @@
-// function lowerNavOptions(smallScreen) {
-
-//     let nav = document.getElementById("nav");
-//     let navHeight = 0;
-//     for (let i = 0; i < nav.children.length-2; i++) {
-//         navHeight += nav.children[i].offsetHeight;
-//         console.log(nav.children[i].offsetHeight);
-//     }
-//     console.log(navHeight);
-//     let navOptions = document.getElementById("nav-options");
-
-//     /*if (smallScreen) {
-//         navHeight += 255;
-//     }*/
-
-//     //navOptions.style.bottom = (navHeight) + "px";
-
-// }
-
 // for loading icon to show when page is loading
 document.addEventListener("DOMContentLoaded", function () {
     // Show the loading icon initially
@@ -69,7 +50,9 @@ document.addEventListener("DOMContentLoaded", function () {
             loadingIcon2.style.display = "none";
             document.getElementById("nav").style.display = "block";
             document.getElementById("defaultCanvas0").style.display = "block";
-        }, 1000);
+            document.getElementById("floatingDots").style.display = "block";
+            document.getElementById("boid-cursor-note").style.display = "block";
+        }, 10);
     });
 });
 
@@ -116,7 +99,7 @@ document.getElementById("nav-option-1").addEventListener("click", function() {
 );
 
 document.getElementById("nav-option-2").addEventListener("click", function() {
-    window.open("https://github.com/sampyle03", '_blank').focus();
+    window.location.href = "/about-me/projects";
 }
 );
 
@@ -131,8 +114,52 @@ document.getElementById("nav-option-3").addEventListener("click", function() {
 );
 
 
-// if (window.innerWidth > 700) {
-//     lowerNavOptions(false);
-// } else {
-//     lowerNavOptions(true);
-// }
+// Floating dots animation
+const generateFloatingDots = () => {
+
+    const canvas = document.getElementById("floatingDots");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const dots = [];
+
+    for (let i = 0; i < 100; i++) {
+      dots.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "lightgrey";
+      for (const dot of dots) {
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 1.1);
+          ctx.fill();
+
+          dot.x += dot.dx;
+          dot.y += dot.dy;
+
+          // Bounce off edges
+          if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+          if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+      }
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+
+    // Resize on window change
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+}
+
+generateFloatingDots();

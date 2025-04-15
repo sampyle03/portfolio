@@ -30,16 +30,16 @@ app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
 
-app.use(csp.csp({
-	policies: {
-	  'default-src': [csp.constants.NONE],
-	  'script-src': [
-		csp.constants.SELF,
-		'https://cdnjs.cloudflare.com',
-		csp.constants.INLINE,
-		'unsafe-eval'
-	  ],
-	  'style-src': [csp.constants.SELF, 'https://cdn.jsdelivr.net'],
-	  'img-src': [csp.constants.SELF, 'data:']
-	}
-  }));
+app.use((req, res, next) => {
+	res.setHeader(
+	  'Content-Security-Policy',
+	  "default-src 'none'; " +
+	  "script-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'; " +
+	  "style-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; " +
+	  "img-src 'self' data:; " +
+	  "connect-src 'self'; " +
+	  "font-src 'self'; " +
+	  "form-action 'self';"
+	);
+	next();
+  });

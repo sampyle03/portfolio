@@ -160,6 +160,7 @@ html {
     transition: text-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
     transform: scale(1);
     font-weight: 900;
+    color: rgb(248, 124, 88);
 }
 
 
@@ -243,7 +244,7 @@ html {
     font-size: 45px;
     font-weight: 1000;
     font-family: "Secondary", "Poppins", sans-serif;
-    color: orange;
+    color: rgb(248, 124, 88);
 }
 
 .stack-languages-container {
@@ -329,7 +330,7 @@ html {
     width: 91%;
     justify-self: center;
     margin-top: 88px;
-    color: orange;
+    color: rgb(248, 124, 88);
 }
 
 

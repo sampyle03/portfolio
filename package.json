@@ -1,22 +1,39 @@
 {
-    "name": "portfolio-website",
-    "version": "1.0.0",
-    "description": "A portfolio website to showcase projects and skills.",
-    "main": "index.js",
-    "scripts": {
-        "start": "node server.js",
-        "build": "webpack --mode production",
-        "dev": "webpack serve --mode development",
-        "test": "echo \"No test specified\" && exit 1"
-    },
-    "keywords": [
-        "portfolio",
-        "website",
-        "projects",
-        "skills"
-    ],
-    "author": "Your Name",
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {}
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "1. Run \"npm install\" in the terminal\r 2. Run \"node server.js\" in the terminal",
+  "main": "server.js",
+  "scripts": {
+    "build": "webpack build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sampyle03/portfolio.git"
+  },
+  "keywords": [
+    "portfolio"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sampyle03/portfolio/issues"
+  },
+  "homepage": "https://github.com/sampyle03/portfolio#readme",
+  "engines": {
+    "node": "22.x",
+    "npm": "10.x"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "node": "^22.14.0",
+    "path": "^0.12.7",
+    "webpack": "^5.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.99.5",
+    "webpack-cli": "^6.0.1"
+  }
 }

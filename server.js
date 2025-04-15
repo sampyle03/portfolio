@@ -1,6 +1,5 @@
 const express = require('express');
 const session = require('express-session');
-const csp = require('express-csp-header');
 const path = require('path');
 const fs = require('fs');
 const { stringify } = require('querystring');

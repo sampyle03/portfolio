@@ -1,4 +1,4 @@
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/server.js',
   };
   

@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("defaultCanvas0").style.display = "block";
             document.getElementById("floatingDots").style.display = "block";
             document.getElementById("boid-cursor-note").style.display = "block";
+            /* do javascript version of @media (max-width: 700px) */
+            if (window.innerWidth < 700) {
+                document.getElementById("boid-cursor-note-mobile").style.display = "block";
+                document.getElementById("scroll-down").style.display = "block";
+            }
         }, 10);
     });
 });

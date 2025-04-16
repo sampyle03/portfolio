@@ -173,6 +173,22 @@ html, body {
     display: none;
 }
 
+#boid-cursor-note {
+    position: absolute;
+    top: 10;
+    right: 10;
+    z-index: 9999;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px black;
+    height: fit-content;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+
 .show {
     opacity: 1;
     visibility: visible;
@@ -334,6 +350,10 @@ html, body {
     }
 
     #boid-cursor-note {
+        display: none !important;
+    }
+
+    #boid-cursor-note-mobile {
         display: none !important;
     }
 

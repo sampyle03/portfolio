@@ -603,6 +603,8 @@ html {
     }
     .stack-type {
         font-size: 65px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .subheading {
         font-size: 65px;

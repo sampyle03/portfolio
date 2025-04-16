@@ -594,4 +594,13 @@ html {
     .stack-type {
         font-size: 65px;
     }
+    #nbr-about-me {
+        display: none;
+    }
+}
+
+@media (max-wdth: 500px) {
+    .stack-languages-container {
+        grid-template-columns: 1fr;
+    }
 }

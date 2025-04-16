@@ -343,10 +343,10 @@ html, body {
     }
 
     #nav-options h3 {
-        margin-right: 20px;
+        /*margin-right: 20px;*/
         margin-bottom: 4px;
-        width: 97%;
-        height: 40px;
+        width: 67%;
+        height: 50px;
         font-size: 30px;
         padding: 4px 8px;
     }
@@ -383,6 +383,7 @@ html, body {
         grid-template-columns: 1fr;
         overflow: visible;
         display: block;
+        width: 100%;
     }
 
     #boid-cursor-note {
@@ -404,9 +405,5 @@ html, body {
 
     #nav-options {
         float: left;
-    }
-
-    #nav-options-grid {
-        margin-left: 80px;
     }
 }

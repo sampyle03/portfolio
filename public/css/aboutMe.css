@@ -560,9 +560,13 @@ html {
         width: 90%;
     }
     #projects {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+    #nbr-about-me {
+        display: none;
     }
 }
+
 @media (max-width: 600px) {
     #nav-bar {
         width: 95%;
@@ -593,14 +597,5 @@ html {
     }
     .stack-type {
         font-size: 65px;
-    }
-    #nbr-about-me {
-        display: none;
-    }
-}
-
-@media (max-wdth: 500px) {
-    .stack-languages-container {
-        grid-template-columns: 1fr;
     }
 }

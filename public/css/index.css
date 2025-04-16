@@ -284,13 +284,13 @@ html, body {
         transform: scale(1) translateX(-50%);
     }
     25% {
-        transform: scale(1.09) translateX(-50%);
+        transform: scale(1.09) translateX(-48%);
     }
     50% {
-        transform: scale(1.14) translateX(-50%);
+        transform: scale(1.14) translateX(-46%);
     }
     75% {
-        transform: scale(1.09) translateX(-50%);
+        transform: scale(1.09) translateX(-48%);
     }
     100% {
         transform: scale(1) translateX(-50%);

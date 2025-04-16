@@ -563,7 +563,7 @@ html {
         grid-template-columns: 1fr;
     }
     #nbr-about-me {
-        display: none;
+        display: none !important;
     }
 }
 

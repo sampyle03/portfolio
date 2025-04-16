@@ -176,7 +176,8 @@ html, body {
 #boid-cursor-note-mobile {
     position: absolute;
     top: 10;
-    right: 10;
+    right: 50%;
+    transform: translateX(50%);
     z-index: 9999;
     color: white;
     font-size: 20px;

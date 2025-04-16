@@ -598,4 +598,8 @@ html {
     .stack-type {
         font-size: 65px;
     }
+    .subheading {
+        font-size: 65px;
+        text-align: center;
+    }
 }

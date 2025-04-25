@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
           /* if last thing on url is /projects, scroll to just below projects section */
           if (window.location.href.endsWith("/projects")) {
               const projectsSection = document.getElementById("projects");
-              const scrollToPosition = projectsSection.offsetTop + projectsSection.offsetHeight - window.innerHeight + 100; // Adjust the offset as needed
+              const scrollToPosition = projectsSection.offsetTop + projectsSection.offsetHeight - window.innerHeight + 20;
               window.scrollTo({
                   top: scrollToPosition,
                   behavior: "smooth"

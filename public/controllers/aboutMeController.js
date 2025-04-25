@@ -18,10 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("body-main").style.display = "block";
           document.getElementById("floatingDots").style.display = "block";
 
-          /* if last thing on url is /projects, scroll to projects section */
+          /* if last thing on url is /projects, scroll to just below projects section */
           if (window.location.href.endsWith("/projects")) {
               const projectsSection = document.getElementById("projects");
-              projectsSection.scrollIntoView({ behavior: "smooth" });
+              const scrollToPosition = projectsSection.offsetTop + projectsSection.offsetHeight - window.innerHeight + 100; // Adjust the offset as needed
+              window.scrollTo({
+                  top: scrollToPosition,
+                  behavior: "smooth"
+              });
+              
             };
       }, 10);
   });

@@ -215,10 +215,11 @@ html {
 
 .stack-type-container {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 

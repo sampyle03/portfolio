@@ -160,26 +160,31 @@ document.getElementById("plm-2").addEventListener("click", function() {
 );
 
 document.getElementById("plm-3").addEventListener("click", function() {
-  window.open("https://github.com/sampyle03/info-retrieval", '_blank').focus();
+  window.open("https://youtu.be/xOuhsIxDbDw", '_blank').focus();
 }
 );
 
 document.getElementById("plm-4").addEventListener("click", function() {
-  window.open("https://github.com/sampyle03/ueauction", '_blank').focus();
+  window.open("https://github.com/sampyle03/info-retrieval", '_blank').focus();
 }
 );
 
 document.getElementById("plm-5").addEventListener("click", function() {
-  window.open("https://github.com/gleb031212/Software-Engineering", '_blank').focus();
+  window.open("https://github.com/sampyle03/ueauction", '_blank').focus();
 }
 );
 
 document.getElementById("plm-6").addEventListener("click", function() {
-  window.open("https://github.com/uealabour/website", '_blank').focus();
+  window.open("https://github.com/gleb031212/Software-Engineering", '_blank').focus();
 }
 );
 
 document.getElementById("plm-7").addEventListener("click", function() {
+  window.open("https://github.com/uealabour/website", '_blank').focus();
+}
+);
+
+document.getElementById("plm-8").addEventListener("click", function() {
   window.open("https://github.com/harrymcdonagh/Cambodia-Care", '_blank').focus();
 }
 );

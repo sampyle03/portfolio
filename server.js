@@ -27,6 +27,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 app.use(express.static('public'));
+app.set('views', path.join(__dirname, 'public', 'views'));
 app.set('view engine', 'pug');
 
 app.use(session({

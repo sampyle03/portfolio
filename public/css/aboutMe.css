@@ -195,11 +195,24 @@ html {
     margin-top: 60px;
 }
 
+#intro-paragraph {
+    width: 88%;
+    background-color: #0e1a0dd3;
+    margin: 0 auto;
+    padding: 12px;
+    background-color: rgba(4, 43, 30, 0.8);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    font-size: 1.4rem;
+    font-weight: 100;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
 #intro p {
-    width: 86%;
-    justify-self: center;
+    width: 98%;
     margin: 0 auto;
     display: block;
+    text-align: center;
 }
 
 #ts-grid {
@@ -529,7 +542,7 @@ html {
     display: inline-flex;
     cursor: pointer;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
     color: black;
 }
 

@@ -51,15 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(function () {
             loadingIcon1.style.display = "none";
             loadingIcon2.style.display = "none";
-            document.getElementById("nav").style.display = "block";
+            document.getElementById("nav").style.display = "flex";
             document.getElementById("defaultCanvas0").style.display = "block";
             document.getElementById("floatingDots").style.display = "block";
             document.getElementById("boid-cursor-note").style.display = "block";
+            document.getElementById("pic-over-boids").style.display = "inline";
             /* do javascript version of @media (max-width: 700px) */
             if (window.innerWidth < 700) {
                 document.getElementById("boid-cursor-note-mobile").style.display = "block";
-                document.getElementById("scroll-down").style.display = "block";
             }
+            windowResized();
         }, 10);
     });
 });
@@ -67,25 +68,29 @@ document.addEventListener("DOMContentLoaded", function () {
 function windowResized() {
     
     if (window.innerWidth > 700) {
-        resizeCanvas(window.innerWidth*0.64, window.innerHeight);
+        resizeCanvas(window.innerWidth*0.6, window.innerHeight);
 
         let nav = document.getElementById("nav");
+        let mobileTitle = document.getElementById("mobile-title-and-subtitle");
         let canvas = document.getElementById("defaultCanvas0");
-        nav.after(canvas);
+        canvas.after(mobileTitle);
+        mobileTitle.after(nav);
 
         nav.style.position = "absolute";
-        nav.style.width = "34%";
+        nav.style.width = "40%";
         canvas.style.position = "absolute";
 
         // lowerNavOptions(false);
 
     } else {
-        resizeCanvas(window.innerWidth, window.innerHeight);
+        resizeCanvas(window.innerWidth, window.innerHeight - 500);
         document.body.style.width = "100%";
 
         let nav = document.getElementById("nav");
+        let mobileTitle = document.getElementById("mobile-title-and-subtitle");
         let canvas = document.getElementById("defaultCanvas0");
-        canvas.after(nav);
+        canvas.after(mobileTitle);
+        mobileTitle.after(nav);
 
         nav.style.position = "relative";
         nav.style.top = "0";
@@ -111,63 +116,63 @@ document.getElementById("nav-option-2").addEventListener("click", function() {
 }
 );
 
-document.getElementById("nav-option-3").addEventListener("click", function() {
-    var email = 'sampyle@outlook.com';
-    var subject = 'Email from Website';
-    var emailBody = 'Hello,';
-    
-    var mailto = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
-    window.open(mailto, '_blank');
+document.getElementById("predictgiiron-link").addEventListener("click", function() {
+    window.location.href = "https://fundingawards.nihr.ac.uk/award/NIHR207227";
 }
 );
 
 
-// Floating dots animation
+// Floating leaves animation
 const generateFloatingDots = () => {
-
     const canvas = document.getElementById("floatingDots");
     const ctx = canvas.getContext("2d");
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
+    const leafColors = [
+        "#c47b1c",
+        "#c9967a",
+        "#a78a18",
+        "#812b04"
+    ];
+    
     const dots = [];
-
     for (let i = 0; i < 100; i++) {
-      dots.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          r: Math.random() * 2,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5
-      });
+        dots.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 4,
+            dx: (Math.random() - 0.5) * 0.5,
+            dy: (Math.random() - 0.5) * 0.5,
+            rotation: Math.random() * Math.PI * 2,
+            color: leafColors[Math.floor(Math.random() * leafColors.length)]
+        });
     }
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "lightgrey";
-      for (const dot of dots) {
-          ctx.beginPath();
-          ctx.arc(dot.x, dot.y, dot.r, 0, Math.PI * 1.1);
-          ctx.fill();
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const dot of dots) {
+            ctx.save();
+            ctx.translate(dot.x, dot.y);
+            ctx.rotate(dot.rotation);
+            ctx.beginPath();
+            ctx.arc(0, 0, dot.r, 0, Math.PI * 1.1);
+            ctx.fillStyle = dot.color;
+            ctx.fill();
+            ctx.restore();
 
-          dot.x += dot.dx;
-          dot.y += dot.dy;
-
-          // Bounce off edges
-          if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
-          if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
-      }
-      requestAnimationFrame(draw);
+            dot.x += dot.dx;
+            dot.y += dot.dy;
+            if (dot.x < 0 || dot.x > canvas.width) dot.dx *= -1;
+            if (dot.y < 0 || dot.y > canvas.height) dot.dy *= -1;
+        }
+        requestAnimationFrame(draw);
     }
-
     draw();
 
-    // Resize on window change
     window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+        canvas.width = canvas.clientWidth;
+        canvas.height = canvas.clientHeight;
     });
 }
-
 generateFloatingDots();

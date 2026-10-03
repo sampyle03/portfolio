@@ -30,21 +30,22 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 
 app.use(session({
-	secret: 'secret',
+	secret: process.env.SESSION_SECRET,
 	resave: true,
 	saveUninitialized: true
 }));
 session.logged = false;
 
 const indexRoute = require('./public/routes/indexRoutes');
-const compassRoute = require('./public/routes/compassRoutes');
 const aboutMeRoute = require('./public/routes/aboutMeRoutes');
 
 app.use('/', indexRoute);
-app.use('/', compassRoute);
 app.use('/about-me', aboutMeRoute);
 
-const PORT = process.env.PORT || 8080;  // Default to 8080 locally, but use Heroku's $PORT in production
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+const PORT = process.env.PORT || 8080;
+if (require.main === module) {
+  const PORT = process.env.PORT || 8080;
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+}
+
+module.exports = app;

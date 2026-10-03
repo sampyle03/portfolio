@@ -1,4 +1,6 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; connect-src 'self';font-src 'self'; img-src 'self' data: https:; style-src 'self' ; script-src 'self'">
+include ../mixins/sparkle.pug
+include ../mixins/linkChain.pug
 link(rel="stylesheet", href="../css/general.css")
 link(rel="stylesheet", href="../css/index.css")
 
@@ -14,30 +16,51 @@ head
 body
     <canvas id="floatingDots"></canvas>
     #nav
-        h1 SAM PYLE
-        hr#headerline 
-        h2 UEA Adv CompSci MSc
-        p Experience in software & web development, machine learning, artificial intelligence, and the significant impacts that they all have on society.
-        p Currently working on a fun React.js political simulation game with policy impacts determined by an advanced machine leaning model!
-        #nav-options.block
-            #nav-options-grid
-                h3#nav-option-1 About Me 
-                h3#nav-option-2 Projects
-                h3#nav-option-3 Contact
+        #title-and-subtitle
+            .name-title-container
+                +sparkle("sparkle-one")
+                h1.name-title SAM PYLE
+                +sparkle("sparkle-two")
+            h2.role-subtitle Full-Stack Developer & UI Designer
+        #text-and-buttons
+            #text-and-buttons-mobile
+                .nav-line#top-nav-line 
+                    p Developer of the NHS' 
+                        span#predictgiiron-link
+                            span PREDICT-GI-IRON
+                            +linkChain("linkChain-predictgi")
+                        span  website & developer at DawnBreak Agency.
+                .nav-line#middle-nav-line
+                    p Graduate of Advanced Computing Sciences (MSc) & Computing Sciences (BSc) at the University of East Anglia.
+                .nav-line#bottom-nav-line
+                    p Full-time 
+                        span#beatles-font BeaTles
+                        span  fan.
+                #nav-options.block
+                    #nav-options-grid
+                        .nav-option-container#nav-option-1-container
+                            h3#nav-option-1 About Me 
+                            +sparkle("sparkle-one")
+                        .nav-option-container
+                            h3#nav-option-2 Projects
     #empty-space
 
 #boid-cursor-note.show
     p Play with the boids using your mouse!
 #boid-cursor-note-mobile.show
     p Play with the boids by tapping your screen!
-#scroll-down 
-    img(src="../images/down-arrow.png", height="60px", width="60px")
 #boid-sketch
     script(src="../controllers/cloudflare/p5.min.js")
     script(src="../controllers/cloudflare/p5.dom.min.js")
     script(src="../controllers/cloudflare/p5.sound.min.js")
     meta(charset="utf-8")
+#mobile-title-and-subtitle
+    .name-title-container
+        +sparkle("sparkle-one")
+        h1.name-title SAM PYLE
+        +sparkle("sparkle-two")
+    h2.role-subtitle Full-Stack Developer & UI Designer
+#pic-over-boids 
+    img(src="../images/Me2025.png")
 
 script(src="../controllers/indexController.js")
-script(src="../controllers/general.js")
-

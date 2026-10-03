@@ -1,19 +1,19 @@
 const flock = [];
 
 function setup() {
-    const canvas = createCanvas(window.innerWidth*0.64, window.innerHeight);
+    const canvas = createCanvas(window.innerWidth*0.6, window.innerHeight);
     for (let i = 0; i < 240; i++){
         flock.push(new Boid());
     }
     if (window.innerWidth > 700) {
-        resizeCanvas(window.innerWidth*0.64, window.innerHeight);
+        resizeCanvas(window.innerWidth*0.6, window.innerHeight);
 
         let nav = document.getElementById("nav");
         let canvas = document.getElementById("defaultCanvas0");
         nav.after(canvas);
 
         nav.style.position = "absolute";
-        nav.style.width = "34%";
+        nav.style.width = "40%";
         canvas.style.position = "absolute";
 
     } else {
@@ -40,8 +40,7 @@ function setup() {
 }
 
 function draw() {
-    background(51, 54, 71);
-
+    clear();
     for (let boid of flock) {
         boid.edges();
         boid.update();

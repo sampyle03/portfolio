@@ -49,19 +49,12 @@ document.getElementById("nbr-projects").addEventListener("click", function() {
 }
 );
 
-document.getElementById("nbr-contact").addEventListener("click", function() {
-  var email = 'sampyle@outlook.com';
-  var subject = 'Email from Website';
-  var emailBody = 'Hello,';
-  
-  var mailto = 'mailto:' + email + '?subject=' + subject + '&body=' + emailBody;
-  window.open(mailto, '_blank');
-}
-);
 
 
 
-const tags = document.querySelectorAll('.hidden');
+// Only observe elements that are part of the initial layout —
+// collapsed (not-yet-shown) projects are excluded until expanded
+const tags = document.querySelectorAll('.hidden:not(.projects-collapsed)');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -93,6 +86,62 @@ const removeGradient = () => {
 }
 
 window.addEventListener('scroll', removeGradient);
+
+
+
+
+// ---- Show More Projects expansion logic ----
+
+const toggleBtn = document.getElementById("projects-toggle");
+const emptyBeforeToggle = document.getElementById("empty-before-toggle");
+const newSecondFromBottom = document.getElementsByClassName("second-from-bottom-project")[1];
+const moreProjects = [
+  document.getElementById("plm-7"),
+  document.getElementById("plm-8"),
+  newSecondFromBottom,
+  document.getElementById("plm-9"),
+];
+
+function expandProjects() {
+  // Start fading out the button and its placeholder
+  toggleBtn.classList.add("fade-out");
+  emptyBeforeToggle.classList.add("fade-out");
+  toggleBtn.setAttribute("aria-expanded", "true");
+
+  toggleBtn.addEventListener("transitionend", function handler(e) {
+    // only react once, to the opacity transition on the button itself
+    if (e.target !== toggleBtn) return;
+    toggleBtn.removeEventListener("transitionend", handler);
+
+    // Pull the toggle and its spacer out of grid flow completely
+    toggleBtn.style.display = "none";
+    emptyBeforeToggle.style.display = "none";
+
+    newSecondFromBottom.style.display = "inline-flex";
+
+
+    // Reveal the rest of the projects — they'll now sit where
+    // the toggle/placeholders used to be
+    moreProjects.forEach((p, i) => {
+      // Re-enter grid flow (still visually hidden via .hidden class)
+      p.classList.remove("projects-collapsed");
+
+      setTimeout(() => {
+        p.classList.remove("hidden");
+        p.classList.add("show");
+        observer.observe(p); // start observing now that it's part of the layout
+      }, i * 80); // slight stagger looks nicer than all-at-once
+    });
+  });
+}
+
+toggleBtn.addEventListener("click", expandProjects);
+toggleBtn.addEventListener("keydown", function(e) {
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    expandProjects();
+  }
+});
 
 
 

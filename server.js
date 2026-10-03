@@ -5,6 +5,8 @@ const fs = require('fs');
 const { stringify } = require('querystring');
 const app = express();
 
+require('dotenv').config();
+
 app.use((req, res, next) => {
 	res.setHeader(
 		'Content-Security-Policy',

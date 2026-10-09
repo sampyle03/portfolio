@@ -449,7 +449,6 @@ body {
 }
 
 #pic-over-boids img{
-    width: 100%;
     height: 100%;
 }
 
@@ -557,7 +556,6 @@ body {
         margin-top: -40px;
         display: flex;
         flex-direction: column;
-        margin-bottom: 230px;
     }
 
     #mobile-title-and-subtitle .name-title-container {

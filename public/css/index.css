@@ -29,7 +29,6 @@
 html, body {
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden;
     height: 100%;
 }
 
@@ -37,8 +36,14 @@ html {
     background: radial-gradient(circle at 30% 20%, #4a2f2a 0%, #2b1a1f 60%, #1a1014 100%);
 }
 
-body {
+#indexBackground1 {
     background: linear-gradient(90deg, rgba(1, 109, 94, 0.6) 0%, rgba(5, 49, 38, 0.4) 60%, rgba(4, 43, 30, 0.3) 100%);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -998;
 }
 
 .loading-icon {
@@ -146,7 +151,10 @@ body {
     width: 100%;
     text-align: right;
     font-size: 67px;
-    color: #c86019;
+    background-image: linear-gradient(rgb(255, 135, 40), #c86019);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     font-family: AnakGedong, 'Fredoka', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
@@ -274,7 +282,8 @@ body {
 
 #nav-options h3 {
     cursor: pointer;
-    background-color: #c86019;
+    background-color: transparent;
+    background-image: linear-gradient(rgb(255, 135, 40), #c86019);
     color: #1f1712;
     box-shadow: 0 6px 16px rgba(120, 60, 30, 0.25);
     padding: 10px;
@@ -285,11 +294,12 @@ body {
     border-radius: 20px;
     width: 110px;
     user-select: none;
+    transition: all 0.25s ease-in-out;
 }
 
 #nav-options h3:hover {
-    transition: all 0.25s ease-in-out;
     transform: scale(1.05);
+    rotate: -2deg;
 }
 
 .nav-option-container {
@@ -316,6 +326,8 @@ body {
     height: 100%;
     z-index: 0;
 }
+
+#boid-sketch, #defaultCanvas0 { pointer-events: none; }
 
 #boid-cursor-note {
     position: absolute;
@@ -382,6 +394,7 @@ body {
     border-radius: 24px 0 0 24px;
     overflow: hidden;
     display: none;
+    touch-action: pan-y;
 }
 
 #mainIndexImage {
@@ -495,7 +508,8 @@ body {
 
 @media screen and (max-width: 1080px) {
     body {
-        overflow-y: scroll;
+        overflow-x: hidden;
+        overflow-y: auto;
         min-height: 100vh;
         position: relative;
     }
@@ -554,8 +568,9 @@ body {
 
     #mobile-title-and-subtitle {
         margin-top: -40px;
-        display: flex;
+        display: none;
         flex-direction: column;
+        margin-bottom: 40px;
     }
 
     #mobile-title-and-subtitle .name-title-container {

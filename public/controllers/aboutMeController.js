@@ -208,10 +208,10 @@ document.getElementById("plm-2").getElementsByClassName("project-learn-more-butt
 }
 );
 
-// document.getElementById("plm-3").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
-//   window.open(, '_blank').focus();
-// }
-// );
+document.getElementById("plm-3").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+  window.open("https://github.com/sampyle03/fake-news-detector", '_blank').focus();
+}
+);
 
 // document.getElementById("plm-4").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
 //   window.open("", '_blank').focus();

@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             loadingIcon1.style.display = "none";
             loadingIcon2.style.display = "none";
             document.getElementById("nav").style.display = "flex";
+            if (window.innerWidth <= 700) { document.getElementById("mobile-title-and-subtitle").style.display = "flex"; }
             document.getElementById("defaultCanvas0").style.display = "block";
             document.getElementById("floatingDots").style.display = "block";
             document.getElementById("boid-cursor-note").style.display = "block";
@@ -76,6 +77,9 @@ function windowResized() {
         canvas.after(mobileTitle);
         mobileTitle.after(nav);
 
+        document.getElementById("boid-cursor-note").style.display = "block";
+        document.getElementById("boid-cursor-note-mobile").style.display = "none";
+        mobileTitle.style.display = "none";
         nav.style.position = "absolute";
         nav.style.width = "40%";
         canvas.style.position = "absolute";
@@ -92,6 +96,9 @@ function windowResized() {
         canvas.after(mobileTitle);
         mobileTitle.after(nav);
 
+        document.getElementById("boid-cursor-note").style.display = "none";
+        document.getElementById("boid-cursor-note-mobile").style.display = "block";
+        mobileTitle.style.display = "flex";
         nav.style.position = "relative";
         nav.style.top = "0";
         nav.style.left = "0";

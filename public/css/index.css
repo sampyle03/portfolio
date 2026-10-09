@@ -599,11 +599,11 @@ body {
 
     #nav {
         overflow: visible;
-        height: 90%;
+        height: 130%;
     }
 
     #nav p {
-        font-size: 27px;
+        font-size: 25px;
     }
 
     #linkChain-predictgi {
@@ -668,7 +668,7 @@ body {
 
     #pic-over-boids {
         z-index: 1;
-        right: -50;
-        bottom: -350;
+        right: -100;
+        bottom: -300;
     }
 }

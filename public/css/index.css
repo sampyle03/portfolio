@@ -34,6 +34,7 @@ html, body {
 
 html { 
     background: radial-gradient(circle at 30% 20%, #4a2f2a 0%, #2b1a1f 60%, #1a1014 100%);
+    overflow-x: hidden;
 }
 
 #indexBackground1 {
@@ -510,7 +511,7 @@ html {
     body {
         overflow-x: hidden;
         overflow-y: auto;
-        min-height: 100vh;
+        min-height: 100%;
         position: relative;
     }
 
@@ -562,7 +563,7 @@ html {
 @media screen and (max-width: 700px) {
     html, body {
         overflow-y: visible;
-        min-height: 100vh;
+        min-height: 100%;
         position: relative;
     }
 
@@ -681,7 +682,7 @@ html {
 
     #pic-over-boids {
         z-index: 1;
-        right: -100;
-        bottom: -300;
+        right: -90;
+        bottom: -270;
     }
 }

@@ -83,7 +83,7 @@ function windowResized() {
         // lowerNavOptions(false);
 
     } else {
-        resizeCanvas(window.innerWidth, window.innerHeight - 400);
+        resizeCanvas(window.innerWidth, window.innerHeight);
         document.body.style.width = "100%";
 
         let nav = document.getElementById("nav");

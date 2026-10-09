@@ -15,10 +15,12 @@ body
     #loading-icon2.loading-icon
         span |
     #body-main
-        #nav-bar 
-            h3.nav-bar-left#nbl-home Home 
-            h3.nav-bar-right#nbr-about-me About Me 
-            h3.nav-bar-right#nbr-projects Projects
+        #nav-bar
+            #nav-bar-left 
+                h3.nav-bar-left#nbl-home Home 
+            #nav-bar-right
+                h3.nav-bar-right#nbr-about-me About Me 
+                h3.nav-bar-right#nbr-projects Projects
         
         #about-me
             section#top-section
@@ -31,7 +33,7 @@ body
                 #intro-paragraph
                     p.hidden I found my interest in programming aged 9 at a
                         span.hidden  Scratch
-                        span.hidden  game programming club.
+                        span.hidden  club.
                     p.hidden Since then, my projects have become a bit more mundaine:
 
                 h2.subheading.hidden#projects-subheading PROJECTS
@@ -45,7 +47,7 @@ body
                                 .project-text Accessible NHS Clinician Cancer Risk Tool
                             .project-i-b-container
                                 .project-learn-more-button
-                                    .project-learn-more-text Visit Website
+                                    .project-learn-more-text Learn More
                                     img(src="../images/down-arrow.png", height="27px", width="27px")
 
                     .project.right.hidden#plm-2
@@ -77,9 +79,8 @@ body
                             .project-text-container
                                 .project-text Secure Software: MFA, Hashing & Encryption
                             .project-i-b-container
-                                .project-learn-more-button
-                                    .project-learn-more-text Learn More
-                                    img(src="../images/down-arrow.png", height="27px", width="27px")
+                                .project-description-container
+                                    .project-description Built and presented secure Node.js blog with team, collaborating using GitHub & Trello.
 
                     .project.left.hidden#plm-5
                         .project-logo-container
@@ -89,7 +90,7 @@ body
                                 .project-text Team Lead for Real-Time React Auction Platform
                             .project-i-b-container
                                 .project-learn-more-button
-                                    .project-learn-more-text Learn More
+                                    .project-learn-more-text Visit GitHub
                                     img(src="../images/down-arrow.png", height="27px", width="27px")
 
                     .project.right.hidden#plm-6
@@ -97,11 +98,10 @@ body
                             img(src="../images/choochoochat.png" alt="PyTorch chatbot placeholder")
                         .project-t-ib-container
                             .project-text-container
-                                .project-text PyTorch RAG Chatbot for Ticket Booking
+                                .project-text RAG Chatbot for Ticket Booking
                             .project-i-b-container
-                                .project-learn-more-button
-                                    .project-learn-more-text Learn More
-                                    img(src="../images/down-arrow.png", height="27px", width="27px")
+                                .project-description-container
+                                    .project-description Built with a 3-person Agile team: delay prediction cut error from 8.4 to 3.0 minutes, plus live fare lookup.
 
                     .second-from-bottom-project.left.hidden#empty-before-toggle
                     #projects-toggle.project-toggle.right.hidden(
@@ -145,11 +145,10 @@ body
                             .project-text-container
                                 .project-text Subtitle-Based Movie Genre Classifier
                             .project-i-b-container
-                                .project-learn-more-button
-                                    .project-learn-more-text Learn More
-                                    img(src="../images/down-arrow.png", height="27px", width="27px")
+                                .project-description-container
+                                    .project-description Developed a ML model predicting movie genre based on subtitles with 77% accuracy.
 
-            h2.subheading.hidden TECHNOLOGIES
+            h2.subheading.hidden SKILLS
 
             #programming-languages
                 .stack-type-container 

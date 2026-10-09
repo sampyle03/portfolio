@@ -34,6 +34,23 @@
   src: url("../fonts/MADE\ Coachella\ Black\ PERSONAL\ USE.otf")
 }
 
+
+*, *::before, *::after { box-sizing: border-box; }
+
+@media (max-width: 600px) {
+    #tsg-left-section h2 { font-size: clamp(40px, 16vw, 90px); }
+    .subheading          { font-size: clamp(36px, 12vw, 65px); }
+    .stack-type          { font-size: clamp(30px, 11vw, 55px); }
+
+    #projects,
+    #programming-languages { grid-template-columns: minmax(0, 1fr); }
+
+    .project-t-ib-container { min-width: 0; }
+}
+
+
+
+
 html, body {
     margin: 0;
     padding: 0;
@@ -122,12 +139,15 @@ html {
 #body-main {
     display: none;
     z-index: 1;
+    flex-direction: column;
 }
 
 
 #nav-bar {
     position: relative;
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     width: 89%;
     color: rgb(255, 255, 255);
     height: 80px;
@@ -142,21 +162,18 @@ html {
     display: inline-block;
     font-family: AnakGedong, 'Fredoka', sans-serif;
     padding: 2px;
-    margin-top: 18px;
-    margin-left: 10px;
-    margin-right: 30px;
     cursor: pointer;
     font-size: 30px;
     user-select: none;
     font-weight: 100;
     border-radius: 40px;
-    width: 170px;
+    height: 55px;
+    width: 190px;
     text-align: center;
     background-color: transparent;
     background-image: linear-gradient(rgb(255, 135, 40), #c86019);
     color: black;
     transition: all 0.2s ease-in-out;
-    height: 40px;
     align-content: center;
 }
 
@@ -165,44 +182,51 @@ html {
     rotate: -2deg;
 }
 
-.nav-bar-left {
-    float: left;
+#nav-bar-left {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
-#nbl-home {
-    margin-left: 20px !important;
+#nav-bar-right {
+    display: flex;
+    align-items: center;
 }
 
-.nav-bar-right {
-    float: right;
+#nav-bar-right h3 {
+    margin-right: 20px;
 }
+
 
 #about-me {
-    display: block;;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 0 auto;
     color: white;
 }
 
 #about-me #top-section {
-    display: block;
+    display: flex;
     margin: 0 auto;
     width: 100%;
+    justify-content: center;
 }
 
 #intro {
     width: 100%;
-    justify-self: center;
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #intro-paragraph {
     width: 88%;
     background-color: #0e1a0dd3;
-    margin: 0 auto;
     padding: 12px;
     background-color: rgba(4, 43, 30, 0.8);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
-    font-size: 1.4rem;
     font-weight: 100;
     border-radius: 10px;
     font-size: 30px;
@@ -218,13 +242,15 @@ html {
 #ts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 0 auto;
     width: 87%;
 }
 
 #tsg-left-section {
     width: 98%;
-    margin: 57px auto 0px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 #tsg-left-section h2 {
@@ -233,6 +259,7 @@ html {
     user-select: none;
     margin-bottom: -10px;
     margin-top: 0px;
+    margin-left: 50px;
     width: fit-content;
     font-weight: 900;
     background-image: linear-gradient(rgb(255, 135, 40), #c86019);
@@ -261,8 +288,6 @@ html {
 #me-pic:hover {
     border: 9px solid white;
     border-radius: 9px;
-    margin-top: 81px;
-    margin-bottom: 9px;
 }
 
 .regular-section {
@@ -336,6 +361,7 @@ html {
     user-select: none;
     width: 84%;
     height: fit-content;
+    margin: 0;
 }
 
 
@@ -438,7 +464,7 @@ html {
 }
 
 .project {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     background-color: #ffffff;
     height: 250px;
@@ -524,6 +550,18 @@ html {
     position: relative;
 }
 
+.project-description-container {
+    align-self: flex-start;
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 100;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
 .left .project-i-b-container {
     justify-content: flex-end;
 }
@@ -539,7 +577,7 @@ html {
     border-radius: 20px;
     justify-content: center;
     align-content: center;
-    display: inline-flex;
+    display: flex;
     cursor: pointer;
     align-items: center;
     transition: all 0.2s ease-in-out;
@@ -597,12 +635,12 @@ html {
 }
 
 .second-from-bottom-project {
-    display: inline-flex;
+    display: flex;
     height: 0px;
 }
 
 .project-toggle {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff00;
@@ -642,7 +680,7 @@ html {
     border-radius: 20px;
     justify-content: center;
     align-content: center;
-    display: inline-flex;
+    display: flex;
     cursor: pointer;
     align-items: center;
     background-color: transparent;
@@ -731,98 +769,64 @@ html {
         height: 300px;
     }
     .stack-type {
-        font-size: 35px;
+        font-size: 3rem;
     }
     .note-container {
-        width: 250px;
-        font-size: 1.2rem;
-    }
-    #projects {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-@media (max-width: 900px) {
-    #nav-bar {
-        width: 95%;
-    }
-
-    #tsg-left-section h2 {
-        font-size: 60px;
-    }
-
-    #me-pic {
-        height: 250px;
-    }
-    .stack-type {
-        font-size: 30px;
-    }
-    #programming-languages {
-        grid-template-columns: 40% 60%;
-    }
-    .note-container {
-        width: 200px;
-        font-size: 1.2rem;
-    }
-    .stack-languages-container {
-        grid-template-columns: 1fr 1fr 1fr;
         width: 90%;
+        font-size: 1.5rem;
     }
+
+
+
+    .subheading {
+        text-align: center;
+    }
+
     #projects {
         grid-template-columns: 1fr;
     }
-    #nbr-about-me {
-        display: none !important;
-    }
-}
-
-@media (max-width: 600px) {
-    #nav-bar {
-        width: 95%;
-    }
-    #nav-bar h3 {
-        font-size: 23px;
-    }
-    #tsg-left-section h2 {
-        font-size: 90px;
-        text-align: center;
-        justify-self: center;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #ts-grid {
-        grid-template-columns: 1fr;
-    }
-    #me-pic {
-        margin-top: 10px;
-        height: 300px;
-    }
-    #programming-languages {
-        grid-template-columns: 1fr;
-    }
-    .note-container {
-        width: 80%;
-        font-size: 1.6rem;
-        line-height: 1.2;
-    }
-    .stack-languages-container {
-        grid-template-columns: 1fr 1fr;
-    }
-    .stack-type-container {
-        justify-content: center;
-    }
-    .stack-type {
-        font-size: 55px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .subheading {
-        font-size: 65px;
-        text-align: center;
+    .project {
+        height: 265px;
     }
 
+    .project-t-ib-container {
+        height: 265px;
+    }
+
+    .project-logo-container {
+        width: 265px;
+        height: 265px;
+    }
 
     .project-text-container {
-        font-size: 1.4rem;
+        font-size: 2rem;
+        height: 190px;
+    }
+
+    .project-text {
+        margin-top: 30px;
+    }
+
+    .project-i-b-container {
+        height: auto;
+    }
+
+    .project-learn-more-button {
+        width: 320px;
+    }
+
+    .project-learn-more-text {
+        font-size: 1.7rem;
+    }
+
+    .right .project-learn-more-button {
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+
+    .left .project-learn-more-button {
+        margin-left: 0px;
+        margin-right: 30px;
     }
 
     .right .project-text {
@@ -832,11 +836,6 @@ html {
 
     .right .project-i-b-container {
         justify-content: flex-end;
-    }
-
-    .right .project-learn-more-button {
-        margin-left: 0px;
-        margin-right: 30px;
     }
 
     .left {
@@ -851,5 +850,172 @@ html {
 
     .second-from-bottom-project {
         display: none !important;
+    }
+}
+@media (max-width: 900px) {
+    #nav-bar {
+        width: 95%;
+    }
+
+    #tsg-left-section h2 {
+        font-size: 60px;
+    }
+
+    #me-pic {
+        height: 250px;
+    }
+    #programming-languages {
+        grid-template-columns: 40% 60%;
+    }
+    .stack-languages-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 90%;
+    }
+    #nbr-about-me {
+        display: none !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .stack-languages-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 600px) {
+    #nav-bar {
+        width: 95%;
+    }
+    #nav-bar h3 {
+        font-size: 23px;
+    }
+
+    #tsg-left-section {
+        align-items: center;
+    }
+    
+    #tsg-left-section h2 {
+        font-size: 90px;
+        text-align: center;
+        justify-self: center;
+        margin-left: 0px;
+        margin-bottom: 0px;
+    }
+    #ts-grid {
+        grid-template-columns: 1fr;
+    }
+    #me-pic {
+        margin-top: 10px;
+        height: 300px;
+    }
+
+    #intro-paragraph {
+        font-size: 1.4rem;
+    }
+    #programming-languages {
+        grid-template-columns: 1fr;
+    }
+    .note-container {
+        width: 80%;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+    .stack-languages-container {
+        grid-template-columns: 1fr 1fr;
+        margin: 0 auto;
+    }
+    .stack-type-container {
+        justify-content: center;
+    }
+    .stack-type {
+        font-size: 2.3rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .subheading {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+
+
+
+
+    .project {
+        height: 165px;
+    }
+
+    .project-t-ib-container {
+        height: 165px;
+    }
+    .project-logo-container {
+        width: 165px;
+        height: 165px;
+    }
+
+    .project-text-container {
+        font-size: 1.3rem;
+        height: 115px;
+    }
+
+    .project-text {
+        margin-top: 10px;
+    }
+
+    .project-i-b-container {
+        height: auto;
+    }
+
+    .project-learn-more-button {
+        width: 170px;
+    }
+
+    .project-learn-more-text {
+        font-size: 1rem;
+    }
+
+    .right .project-learn-more-button {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    .left .project-learn-more-button {
+        margin-left: 0px;
+        margin-right: 10px;
+    }
+
+    .right .project-text {
+        text-align: right;
+        margin-right: 10px;
+        margin-left: 0px;
+    }
+
+    .left .project-text {
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .right .project-i-b-container {
+        justify-content: flex-end;
+    }
+
+    .left {
+        border-radius: 0px;
+    }
+
+    .right {
+        border-radius: 0px;
+        margin-top: 0px;
+        flex-direction: row;
+    }
+
+    .second-from-bottom-project {
+        display: none !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .project-text-container {
+        font-size: 1.13rem;
+        height: 115px;
     }
 }

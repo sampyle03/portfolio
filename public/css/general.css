@@ -3,6 +3,60 @@
   src: url("../fonts/Anak\ Gedong.ttf");
 }
 
+@font-face {
+  font-family: "Poppins";
+  font-weight: 100;
+  src: url("../fonts/Poppins/Poppins-Thin.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 200;
+  src: url("../fonts/Poppins/Poppins-ExtraLight.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 300;
+  src: url("../fonts/Poppins/Poppins-Light.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 400;
+  src: url("../fonts/Poppins/Poppins-Regular.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 500;
+  src: url("../fonts/Poppins/Poppins-Medium.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 600;
+  src: url("../fonts/Poppins/Poppins-SemiBold.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 700;
+  src: url("../fonts/Poppins/Poppins-Bold.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 800;
+  src: url("../fonts/Poppins/Poppins-ExtraBold.ttf")
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-weight: 900;
+  src: url("../fonts/Poppins/Poppins-Black.ttf")
+}
+
 body {
     font-family: var(--tlp-font-sans-serif);
     margin: 0;
@@ -93,7 +147,7 @@ body {
 /*======================= BOX CARDS ====================*/
 
 .boxCard {
-    display: inline-flex;
+    display: flex;
     height: 300px;
     width: 300px;
     margin: 10px auto ;
@@ -107,7 +161,7 @@ body {
 /*==================== RECTANGULAR CARDS ====================*/
 
 .rectangularCard{
-    display: inline-flex;
+    display: flex;
     height: 300px;
     width: 80%;
     margin: 10px auto ;

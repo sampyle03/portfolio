@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
           loadingIcon1.style.display = "none";
           loadingIcon2.style.display = "none";
-          document.getElementById("body-main").style.display = "block";
+          document.getElementById("body-main").style.display = "flex";
           document.getElementById("floatingDots").style.display = "block";
 
           /* if last thing on url is /projects, scroll to just below projects section */
@@ -117,7 +117,7 @@ function expandProjects() {
     toggleBtn.style.display = "none";
     emptyBeforeToggle.style.display = "none";
 
-    newSecondFromBottom.style.display = "inline-flex";
+    newSecondFromBottom.style.display = "flex";
 
 
     // Reveal the rest of the projects — they'll now sit where
@@ -197,43 +197,48 @@ const generateFloatingDots = () => {
 generateFloatingDots();
 
 
-document.getElementById("plm-1").addEventListener("click", function() {
+document.getElementById("plm-1").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
   /* open github link in new tab */
-  window.open("https://github.com/sampyle03", '_blank').focus();
+  window.open("https://fundingawards.nihr.ac.uk/award/NIHR207227", '_blank').focus();
 }
 );
 
-document.getElementById("plm-2").addEventListener("click", function() {
-  window.open("https://github.com/sampyle03/fake-news-detector", '_blank').focus();
+document.getElementById("plm-2").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+  window.open("https://www.dawnbreakagency.co.uk/", '_blank').focus();
 }
 );
 
-document.getElementById("plm-3").addEventListener("click", function() {
-  window.open("https://youtu.be/xOuhsIxDbDw", '_blank').focus();
-}
-);
+// document.getElementById("plm-3").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+//   window.open(, '_blank').focus();
+// }
+// );
 
-document.getElementById("plm-4").addEventListener("click", function() {
-  window.open("https://github.com/sampyle03/info-retrieval", '_blank').focus();
-}
-);
+// document.getElementById("plm-4").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+//   window.open("", '_blank').focus();
+// }
+// );
 
-document.getElementById("plm-5").addEventListener("click", function() {
+document.getElementById("plm-5").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
   window.open("https://github.com/sampyle03/ueauction", '_blank').focus();
 }
 );
 
-document.getElementById("plm-6").addEventListener("click", function() {
-  window.open("https://github.com/gleb031212/Software-Engineering", '_blank').focus();
+// document.getElementById("plm-6").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+//   window.open("", '_blank').focus();
+// }
+// );
+
+document.getElementById("plm-7").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+  window.open("https://github.com/sampyle03/portfolio", '_blank').focus();
 }
 );
 
-document.getElementById("plm-7").addEventListener("click", function() {
-  window.open("https://github.com/uealabour/website", '_blank').focus();
+document.getElementById("plm-8").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+  window.open("https://github.com/sampyle03/info-retrieval", '_blank').focus();
 }
 );
 
-document.getElementById("plm-8").addEventListener("click", function() {
-  window.open("https://github.com/harrymcdonagh/Cambodia-Care", '_blank').focus();
-}
-);
+// document.getElementById("plm-9").getElementsByClassName("project-learn-more-button")[0].addEventListener("click", function() {
+//   window.open("", '_blank').focus();
+// }
+// );

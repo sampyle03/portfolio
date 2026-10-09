@@ -668,5 +668,7 @@ body {
 
     #pic-over-boids {
         z-index: 1;
+        right: -50;
+        bottom: -350;
     }
 }

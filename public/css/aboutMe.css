@@ -35,19 +35,6 @@
 }
 
 
-*, *::before, *::after { box-sizing: border-box; }
-
-@media (max-width: 600px) {
-    #tsg-left-section h2 { font-size: clamp(40px, 16vw, 90px); }
-    .subheading          { font-size: clamp(36px, 12vw, 65px); }
-    .stack-type          { font-size: clamp(30px, 11vw, 55px); }
-
-    #projects,
-    #programming-languages { grid-template-columns: minmax(0, 1fr); }
-
-    .project-t-ib-container { min-width: 0; }
-}
-
 
 
 
@@ -312,7 +299,6 @@ html {
 #programming-languages {
     display: grid;
     grid-template-columns: 38% 62%;
-    margin-top: 60px;
 }
 
 .stack-type-container {
@@ -692,7 +678,7 @@ html {
     padding: 4px 10px;
     font-family: AnakGedong, 'Fredoka', sans-serif;
     font-weight: 300;
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     color: black;
     display: inline-block;
     transition: all 0.3s ease-in-out;
@@ -894,7 +880,7 @@ html {
     }
     
     #tsg-left-section h2 {
-        font-size: 90px;
+        font-size: 70px;
         text-align: center;
         justify-self: center;
         margin-left: 0px;
@@ -922,9 +908,11 @@ html {
     .stack-languages-container {
         grid-template-columns: 1fr 1fr;
         margin: 0 auto;
+        padding: 5px;
     }
     .stack-type-container {
         justify-content: center;
+        margin-bottom: 5px;
     }
     .stack-type {
         font-size: 2.3rem;
@@ -1010,6 +998,10 @@ html {
 
     .second-from-bottom-project {
         display: none !important;
+    }
+
+    .project-description-container {
+        display: none;
     }
 }
 
